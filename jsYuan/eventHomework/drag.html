@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+   
+</head>
+<body>
+    <style>
+        div{
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color:#abcdef;
+        }
+    </style>
+    <div>
+
+    </div>
+    <script>
+        var div = document.getElementsByTagName('div')[0];
+        var style = getComputedStyle(div);
+        var x = style.left;
+        var y = style.top;
+        div.onmousedown = function (e) {
+            var pageX = e.pageX;
+            var pageY = e.pageY;
+            document.onmousemove = function (e) {
+                disX = e.pageX - pageX;
+                disY = e.pageY - pageY;
+                div.style.left = parseFloat(x) + disX + 'px'; 
+                div.style.top = parseFloat(y) + disY + 'px'
+                // div.style.left = parseFloat(style.left) + e.movementX + 'px';
+                // div.style.top = parseFloat(style.top) + e.movementY + 'px';
+            }
+            document.onmouseup = function (e) {
+                document.onmousemove = null;
+            }
+        }
+        // var div = document.querySelector("div");
+        // var style = getComputedStyle(div);
+        // var divLeft = parseFloat(style.left);
+        // var divTop = parseFloat(style.top);
+        // div.onmousedown = function(e) {
+        //     if (e.button !== 0) { //如果不是鼠标左键
+        //         return;
+        //     }
+        //     window.onmousemove = function(e) {
+        //         divLeft += e.movementX;
+        //         divTop += e.movementY;
+        //         div.style.left = divLeft + "px";
+        //         div.style.top = divTop + "px";
+        //     }
+        //     window.onmouseup = window.onmouseleave = function(e) {
+        //         if (e.button === 0) {
+        //             window.onmousemove = null; //移除鼠标移动事件
+        //         }
+        //     }
+        // }
+    </script>
+</body>
+</html>

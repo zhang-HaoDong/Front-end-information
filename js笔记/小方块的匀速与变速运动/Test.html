@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="height: 100px;width: 100px;background-color: red;position: absolute; left: 0; top: 0;">
+    </div>
+    <div style="border-radius: 50px;background-color:rgba(0, 255, 0, 0.5);height: 50px;width: 50px;position: fixed;bottom: 100px;right: 25px;line-height: 50px;text-align: center;">开始</div>
+    <div style="border-radius: 50px;background-color:rgba(255, 0, 0, 0.5);height: 50px;width: 50px;position: fixed;bottom: 25px;right: 25px; line-height: 50px;text-align: center;">暂停</div>
+    <script>
+      var div = document.getElementsByTagName('div')[0];
+      var start = document.getElementsByTagName('div')[1];
+      var end = document.getElementsByTagName('div')[2];
+      var speed = 1;
+      var timeer;
+      var key=true;
+      start.onclick=function(){
+        if(key){
+       timeer= setInterval(function(){
+          speed+=speed/700;
+        div.style.left=parseInt(window.getComputedStyle(div,null)['left'])+speed+'px';
+      },10)
+      key = false;
+    }
+    }
+      end.onclick=function(){
+        clearInterval(timeer);
+        key = true;
+      }
+    </script>
+</body>
+</html>

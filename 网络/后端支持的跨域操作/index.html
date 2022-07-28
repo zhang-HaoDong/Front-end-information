@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var xml = new XMLHttpRequest();
+        xml.open('get', 'https://developer.duyiedu.com/edu/testAjaxCrossOrigin');
+        xml.onreadystatechange = function () {
+            if(xml.readyState == 4 && xml.status == 200){
+            var data = JSON.parse(xml.responseText);
+            console.log(data);
+            }
+        }
+        xml.send();
+        //https://developer.duyiedu.com/edu/testAjaxCrossOrigin 不报错，因为设置了Access-Contr-Allow-Origin属性一支持跨域
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var div = document.createElement('div');
+        div.style.border = '1px solid #000';
+        div.style.width = '100px';
+        div.style.height = '100px';
+        document.body.appendChild(div);
+        div.onclick = function () {
+            var ran1 = parseInt(Math.random()*255);
+            var ran2 = parseInt(Math.random()*255);
+            var ran3 = parseInt(Math.random()*255);
+            div.style.backgroundColor =`rgb(${ran1},${ran2},${ran3})`;
+        }
+    </script>
+</body>
+</html>

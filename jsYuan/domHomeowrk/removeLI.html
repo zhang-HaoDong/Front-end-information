@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li>Lorem ipsum dolor sit.<button>delete1</button></li>
+      <li>Exercitationem labore quod alias?<button>delete2</button></li>
+      <li>Repellat, sunt! Rem, harum.<button>delete3</button></li>
+      <li>Dolore officiis iure labore.<button>delete4</button></li>
+      <li>Porro fuga dolor exercitationem.<button>delete5</button></li>
+      <li>Expedita dicta doloribus quasi?<button>delete6</button></li>
+      <li>Dolores dicta vitae minima!<button>delete7</button></li>
+      <li>Mollitia iste nam quis?<button>delete8</button></li>
+      <li>Vero ab nisi asperiores?<button>delete9</button></li>
+      <li>
+        Commodi deleniti architecto reprehenderit?<button>delete10</button>
+      </li>
+    </ul>
+    <script>
+      var ul = document.getElementsByTagName("ul")[0];
+      var li = ul.querySelectorAll("button");
+      for (var i = 0; i < li.length; i++) {
+          li[i].onclick = function() {
+              this.parentNode.remove();
+          }
+      }
+    </script>
+  </body>
+</html>

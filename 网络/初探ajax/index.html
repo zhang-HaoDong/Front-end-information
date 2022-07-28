@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var xml = new XMLHttpRequest();//以下代买会进行报错
+        xml.open('get', 'https://developer.duyiedu.com/edu/testAjax');//https://developer.duyiedu.com/edu/testAjaxCrossOrigin 不报错，因为设置了
+        //Access-Contr-Allow-Origin属性一支持跨域
+        xml.send();
+    </script>
+</body>
+</html>
